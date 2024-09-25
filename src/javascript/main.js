@@ -14,11 +14,11 @@ function rotate(degrees) {
 }
 
 function drawLine(length) {
-    const newX = pointX + length * Math.cos(currentRotation * (Math.PI / 180));
-    const newY = pointY + length * Math.sin(currentRotation * (Math.PI / 180));
+    const rotation = currentRotation * (Math.PI / 180);
+    const newX = pointX + length * Math.cos(rotation);
+    const newY = pointY + length * Math.sin(rotation);
 
     context.strokeStyle = getRandomColor();
-    context.lineWidth = 2;
     context.beginPath();
     context.moveTo(pointX, pointY);
     context.lineTo(newX, newY);
@@ -44,6 +44,8 @@ function chapeaux(length, depth) {
 }
 
 (() => {
+    context.lineWidth = 2;
+    
     for (let i = 0; i < 3; i++) {
         chapeaux(canvas.width * 2, 5);
         rotate(120);
