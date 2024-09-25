@@ -12,6 +12,7 @@ In this project, we aimed to recreate the Koch Snowflake using HTML5 canvas and 
 
 - **Fractal generation**: Iteratively creates the Koch Snowflake using JavaScript.
 - **Canvas drawing**: Renders the fractal on an HTML5 canvas.
+- **Customizable iterations**: to adjust the number of iterations to control the complexity of the snowflake.
 
 ## How to Run
 
@@ -31,8 +32,6 @@ Go to [this project's GitHub Pages](https://vianpyro.github.io/Untitled/) or:
 
 ## Future Improvements
 
-
-- Add a slider to adjust the number of iterations to control the complexity of the snowflake.
 - Add interactivity to dynamically change colors or save the generated fractal as an image.
 - Optimize the drawing performance for higher iteration counts.
 - Refactor the code for better modularity and readability.

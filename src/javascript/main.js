@@ -1,4 +1,5 @@
 const canvas = document.getElementById("oh-no-not-a-canvas");
+const iterations = document.getElementById("iterations-slider");
 const context = canvas.getContext('2d');
 
 let pointX = canvas.width / 6;
@@ -28,26 +29,33 @@ function drawLine(length) {
     pointY = newY;
 }
 
-function chapeaux(length, depth) {
+function drawKochSnowflake(length, depth) {
     if (depth > 1) {
-        chapeaux(length / 3, depth - 1);
+        drawKochSnowflake(length / 3, depth - 1);
         rotate(-60);
-        chapeaux(length / 3, depth - 1);
+        drawKochSnowflake(length / 3, depth - 1);
         rotate(120);
-        chapeaux(length / 3, depth - 1);
+        drawKochSnowflake(length / 3, depth - 1);
         rotate(-60);
-        chapeaux(length / 3, depth - 1);
+        drawKochSnowflake(length / 3, depth - 1);
     }
     if (depth === 1) {
         drawLine(length / 3);
     }
 }
 
-(() => {
+function updateCanvas(canvas, context, iterations) {
     context.lineWidth = canvas.width / 500;
-    
+
     for (let i = 0; i < 3; i++) {
-        chapeaux(canvas.width * 2, 5);
+        drawKochSnowflake(canvas.width * 2, iterations);
         rotate(120);
     }
-})();
+}
+
+iterations.addEventListener("input", () => {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    updateCanvas(canvas, context, iterations.value);
+});
+
+updateCanvas(canvas, context, iterations.value);
