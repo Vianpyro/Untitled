@@ -48,7 +48,7 @@ function updateCanvas(canvas, context, iterations) {
     context.lineWidth = canvas.width / (40 * iterations + 50);
 
     for (let i = 0; i < 3; i++) {
-        drawKochSnowflake(canvas.width * 2, iterations);
+        drawKochSnowflake(canvas.width * 2, Number(iterations));
         rotate(120);
     }
 }
