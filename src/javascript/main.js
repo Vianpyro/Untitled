@@ -35,7 +35,7 @@ function chapeaux(length, depth) {
         chapeaux(length / 3, depth - 1);
         rotate(120);
         chapeaux(length / 3, depth - 1);
-        rotate(300);
+        rotate(-60);
         chapeaux(length / 3, depth - 1);
     }
     if (depth === 1) {
@@ -44,7 +44,7 @@ function chapeaux(length, depth) {
 }
 
 (() => {
-    context.lineWidth = 2;
+    context.lineWidth = canvas.width / 500;
     
     for (let i = 0; i < 3; i++) {
         chapeaux(canvas.width * 2, 5);
