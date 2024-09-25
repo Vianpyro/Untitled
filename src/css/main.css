@@ -11,7 +11,7 @@
         --text-color: #fff;
     }
 
-    --canvas-size: calc(min(100svh, 100svw) * 0.75);
+    --canvas-size: calc(min(100svh, 100svw) * 0.9);
 }
 
 * {
