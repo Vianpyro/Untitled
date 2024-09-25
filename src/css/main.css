@@ -13,6 +13,8 @@
         --background-color-secondary: #000;
         --border-color: #fff;
     }
+
+    --canvas-size: calc(min(100svh, 100svw) * 0.75);
 }
 
 body {
@@ -25,8 +27,8 @@ body {
 }
 
 #oh-no-not-a-canvas {
-    width: calc(min(100svh, 100svw) * 0.75);
-    height: calc(min(100svh, 100svw) * 0.75);
+    width: var(--canvas-size);
+    height: var(--canvas-size);
     border: 1px solid var(--border-color);
     background-color: var(--background-color-secondary);
     border-collapse: collapse;
